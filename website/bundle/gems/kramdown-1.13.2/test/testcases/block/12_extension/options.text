@@ -2,6 +2,10 @@
 
 {::options unusedvar="val" /}
 
+{::options template="string://<%= 'untrusted template evaluated' %>" /}
+
+Document templates cannot be selected by document content.
+
 # without header id
 
 <div>

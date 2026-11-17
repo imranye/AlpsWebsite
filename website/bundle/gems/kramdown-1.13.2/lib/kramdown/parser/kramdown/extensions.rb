@@ -103,7 +103,10 @@ module Kramdown
         when 'options'
           opts.select do |k,v|
             k = k.to_sym
-            if Kramdown::Options.defined?(k)
+            if k == :template
+              warning("The kramdown option 'template' is not allowed in document content")
+              false
+            elsif Kramdown::Options.defined?(k)
               begin
                 val = Kramdown::Options.parse(k, v)
                 @options[k] = val
